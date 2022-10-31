@@ -1,0 +1,159 @@
+/* Write your CSS code here */
+.home-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto';
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 60px;
+}
+
+.nav-logo {
+  width: 120px;
+  height: 30px;
+}
+
+.content-nav1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.log-out {
+  display: none;
+}
+
+.content-nav2 {
+  display: none;
+}
+
+.icon-img {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-items {
+  color: #475569;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.button-logout {
+  width: 54px;
+  height: 25px;
+  border-style: none;
+  outline: none;
+  background-color: #0967d2;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 9px;
+  color: white;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-top: 40px;
+}
+
+.first-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.home-heading {
+  color: #1e293b;
+  font-size: 40px;
+}
+
+.para-home {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.shop-button {
+  width: 120px;
+  height: 35px;
+  border-style: none;
+  outline: none;
+  background-color: #0967d2;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+.right-div1 {
+  display: none;
+}
+
+.right-div2 {
+  width: 34%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .home-bg {
+    height: 100%;
+  }
+  .content-nav1 {
+    display: none;
+  }
+  .log-out {
+    display: block;
+    width: 25px;
+    height: 25px;
+  }
+  .content-nav2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style-type: none;
+    width: 90%;
+    height: 30px;
+    background-color: #e6f6ff;
+    padding: 20px;
+  }
+  .first-div {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .right-div1 {
+    display: block;
+    width: 50%;
+    height: 30%;
+  }
+  .right-div2 {
+    display: none;
+  }
+  .home-heading {
+    font-size: 25px;
+    text-align: center;
+  }
+  .para-home {
+    text-align: center;
+  }
+}
