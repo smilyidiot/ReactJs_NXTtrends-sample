@@ -62,6 +62,7 @@
 }
 
 .submit-button {
+  cursor: :pointer;
   width: 230px;
   height: 35px;
   align-self: flex-start;
