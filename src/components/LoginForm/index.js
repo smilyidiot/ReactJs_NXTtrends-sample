@@ -4,24 +4,21 @@ import {Component} from 'react'
 import './index.css'
 
 class LoginForm extends Component {
-  state = {userName: '', pass: '', isTrue: false, values: ''}
+  state = {username: '', password: '', isTrue: false, msg: ''}
 
-  readUserName = e => {
-    this.setState({userName: e.target.value})
+  readUserName = event => {
+    this.setState({username: event.target.value})
   }
 
-  readPassword = e => {
-    this.setState({pass: e.target.value})
+  readPassword = event => {
+    this.setState({password: event.target.value})
   }
 
-  submitForm = e => {
-    e.preventDefault()
-    const {userName, pass} = this.state
-    const object = {
-      username: userName,
-      password: pass,
-    }
-    this.getResponse(object)
+  submitForm = event => {
+    event.preventDefault()
+    const {username, password} = this.state
+    const userDetails = {username, password}
+    this.getResponse(userDetails)
   }
 
   getResponse = async object => {
@@ -32,19 +29,20 @@ class LoginForm extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
+
+    const {history} = this.props
     if (response.ok === true) {
-      const {history} = this.props
       history.replace('/')
     } else {
       this.setState({
-        values: data.error_msg,
+        msg: data.error_msg,
         isTrue: true,
       })
     }
   }
 
   render() {
-    const {userName, pass, isTrue, values} = this.state
+    const {username, password, isTrue, msg} = this.state
     return (
       <div className="login-bg">
         <img
@@ -72,7 +70,7 @@ class LoginForm extends Component {
             id="input1"
             placeholder="Username"
             onChange={this.readUserName}
-            value={userName}
+            value={username}
           />
           <label className="label" htmlFor="input2">
             PASSWORD
@@ -83,12 +81,12 @@ class LoginForm extends Component {
             id="input2"
             placeholder="Password"
             onChange={this.readPassword}
-            value={pass}
+            value={password}
           />
           <button type="submit" className="submit-button">
             Login
           </button>
-          {isTrue && <p className="error-para">{values}</p>}
+          {isTrue && <p className="error-para">{msg}</p>}
         </form>
       </div>
     )
